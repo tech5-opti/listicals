@@ -2,7 +2,10 @@ import TopNav from "@/app/components/TopNav";
 import EventRow from "@/app/components/EventRow";
 import SubscribeNow from "@/app/components/SubscribeNow";
 import SiteFooter from "@/app/components/SiteFooter";
+import LatestFromBlog from "@/app/components/LatestFromBlog";
 import { getGroupedLists } from "@/app/lib/lists";
+
+export const revalidate = 300;
 
 export default function Home() {
   const groups = getGroupedLists();
@@ -12,6 +15,7 @@ export default function Home() {
       <TopNav />
 
       <main>
+        <LatestFromBlog />
         {/* Hero */}
         <section className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
